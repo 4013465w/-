@@ -27,6 +27,16 @@
     <script type="text/javascript" src="js/html5.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
 <![endif]-->
+<script>
+function myFunction()
+{
+var word = document.getElementById('input3').value;
+$.post("php/translate.php",{word:word},function(msg){ 
+                 document.getElementById('english').value=msg;
+                    }); 
+
+}
+</script>
 </head>
 <body>
     <header class="scrolled">
@@ -57,7 +67,13 @@
                       <div class="form-group">
                         <label for="input3" class="col-sm-2 control-label">台词：</label>
                         <div class="col-sm-10">
-                        <input type="text" name="word" class="form-control" id="input3" placeholder="没有什么能够阻挡~~">
+                        <input type="text" onchange="myFunction();" name="word" class="form-control" id="input3" placeholder="没有什么能够阻挡~~">
+                        </div>
+                        </div>
+                          <div class="form-group">
+                        <label for="english" class="col-sm-2 control-label">English：</label>
+                        <div class="col-sm-10">
+                        <input type="text" name="english"  class="form-control" id="english" placeholder="Nothing can stop~~">
                         </div>
                         </div>
                          <div class="form-group">
@@ -112,24 +128,26 @@
                       $order[0][0] = '大片模式';
                       if(@$_POST['word']){
                         $word=$_POST['word'];
+                        $english=$_POST['english'];
                       }else{
                         $word='没有什么能够阻挡~';
+                        $english="Nothing can stop~~";
                       }
-                      $order[0][1] = 'f_png,c_fill,e_brightness:-8--c_pad,g_center,b_000000ff,e_yellow:30--l_text:ms:'.$word.',g_south,y_40';
+                      $order[0][1] = 'f_png,c_fill,w_800,h_400,e_brightness:-8--c_pad,w_800,h_550,g_center,b_000000ff,e_yellow:30--l_text:en:'.$english.',g_south,y_0--l_text:ms:'.$word.',g_south,y_16--l_ydlg,w_70,h_70';
                       $order[1][0] = '黑白片';
-                      $order[1][1] = 'c_fill,e_grayscale';
+                      $order[1][1] = 'l_ydlg,w_70,h_70--c_fill,e_grayscale';
                       $order[2][0] = '油画效果';
-                      $order[2][1] = 'c_fill,e_oil_paint:2';
+                      $order[2][1] = 'l_ydlg,w_70,h_70--c_fill,e_oil_paint:2';
                       $order[3][0] = '自动调整';
-                      $order[3][1] = 'c_fill,e_improve';
+                      $order[3][1] = 'l_ydlg,w_70,h_70--c_fill,e_improve';
                       $order[4][0] = '老照片';
-                      $order[4][1] = 'c_fill,e_sepia';
+                      $order[4][1] = 'l_ydlg,w_70,h_70--c_fill,e_sepia';
                       $order[5][0] = '绿色';
-                      $order[5][1] = 'c_fill,e_green:40';
+                      $order[5][1] = 'l_ydlg,w_70,h_70--c_fill,e_green:40';
                       $order[6][0] = '蓝色';
-                      $order[6][1] = 'c_fill,e_blue:40';
+                      $order[6][1] = 'l_ydlg,w_70,h_70--c_fill,e_blue:40';
                       $order[7][0] = '来个边框';
-                      $order[7][1] = 'bo_8_bbbbbb';
+                      $order[7][1] = 'l_ydlg,w_70,h_70--bo_8_bbbbbb';
                      for($i=0;$i<=7;$i++){
                    echo    '<div class="row_1">'.
                     '<div class="container">'.
@@ -140,10 +158,10 @@
                                       '<h3 style="display:inline" class="panel-title" id="panel-title"><span class="label label-info">模式:</span>&nbsp'.$order[$i][0].'</h3>'.
                                                                 
                               
-                                    '<a style="display:inline" style="float:right" class="label label-danger" href="'.'http://bai-du.imgx.sinacloud.net/l_ydlg,w_70,h_70--'.$order[$i][1].'/'.$img_url.'" download="烟雨蒙蒙">下载</a>'.
+                                    '<a style="display:inline" style="float:right" class="label label-danger" href="'.'http://bai-du.imgx.sinacloud.net/'.$order[$i][1].'/'.$img_url.'" download="烟雨蒙蒙">下载</a>'.
                                 '</div>'.
                                 '<figure>'.
-                                    '<img src="'.'http://bai-du.imgx.sinacloud.net/l_ydlg,w_70,h_70--'.$order[$i][1].'/'.$img_url.'" alt="">'.
+                                    '<img src="'.'http://bai-du.imgx.sinacloud.net/'.$order[$i][1].'/'.$img_url.'" alt="">'.
                                 '</figure>'.
                             
                             '</div>'.
