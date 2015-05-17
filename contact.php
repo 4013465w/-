@@ -53,7 +53,7 @@
                         <div class="col-md-12">
                             <div class="contact_us">
                                
-                                <img src="http://bai-du.imgx.sinacloud.net/l_ydlg,w_70,h_70--f_png,c_fill,e_brightness:-8--c_pad,g_center,b_000000ff,e_yellow:30--l_text:ms:%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E8%83%BD%E5%A4%9F%E9%98%BB%E6%8C%A1~,g_south,y_40/2015/05/16/1126226170.jpg" alt="">
+                                <img src="http://bai-du.imgx.sinacloud.net/f_png,c_fill,w_800,h_400,e_brightness:-8--c_pad,w_800,h_550,g_center,b_000000ff,e_yellow:30--l_text:en:Nothing%20can%20stop~~,g_south,y_0--l_text:ms:%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E8%83%BD%E5%A4%9F%E9%98%BB%E6%8C%A1~,g_south,y_16--l_ydlg,w_70,h_70/2015/05/16/1126226170.jpg" alt="">
                                 <p style="padding:20px;">&nbsp &nbsp本人学识渊博、经验丰富，代码风骚、效率恐怖， c/c++、java、php、python、javascipt 无不精通，熟练掌握各种框架，深山苦练20余年，一天只睡4小时，电话通知出 bug 后秒登 vpn ，千里之外定位问题，瞬息之间修复上线。身体强壮、健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗账号、威胁pm，什么都能干。
                                 </p>
                                <div class = "contact" id="contact-me">
