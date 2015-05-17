@@ -1,0 +1,10 @@
+name: xiaoshig
+version: 2
+handle:
+    - rewrite: if(!is_dir() && !is_file()) goto "index.php?%{QUERY_STRING}"
+- rewrite: if ( path ~ "sitemap_baidu.xml" ) goto "wp-content/plugins/baidu-sitemap-generator/SAE_xml.php" 
+
+- rewrite: if ( path ~ "sitemap.html" ) goto "wp-content/plugins/baidu-sitemap-generator/SAE_html.php"
+
+
+- rewrite: if ( in_header["host"] ~ "^xiaoshig.sinaapp.com" && path ~ "^(.*)$") goto "http://www.fddcn.cn$1 [L,QSA,R=301]"
