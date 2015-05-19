@@ -36,6 +36,20 @@ $.post("php/translate.php",{word:word},function(msg){
                     }); 
 
 }
+function zhaiyan()
+{
+  var word=1;
+$.getJSON("php/zhaiyan.php",{word:word},function(msg){ 
+                //alert(msg['zhaiyan']);
+                 document.getElementById('input3').value=msg.zhaiyan;
+                 word=msg.zhaiyan;
+                 $.post("php/translate.php",{word:word},function(msg){ 
+                 document.getElementById('english').value=msg;
+                    }); 
+                    }); 
+
+}
+zhaiyan();
 </script>
 </head>
 <body>
@@ -133,7 +147,14 @@ $.post("php/translate.php",{word:word},function(msg){
                         $word='没有什么能够阻挡~';
                         $english="Nothing can stop~~";
                       }
-                      $order[0][1] = 'f_png,c_fill,w_800,h_400,e_brightness:-8--c_pad,w_800,h_550,g_center,b_000000ff,e_yellow:30--l_text:en:'.$english.',g_south,y_0--l_text:ms:'.$word.',g_south,y_16--l_ydlg,w_70,h_70';
+                      $word = str_replace(",", "",$word);
+                     $english = str_replace(",", "",$english);
+                      $word=rawurlencode($word);
+                     $english=rawurlencode($english);
+
+                      //$word=urlencode($word);
+                     //$english=urlencode($english);
+                      $order[0][1] = 'f_png,c_fill,w_800,h_400,e_brightness:-8--c_pad,w_800,h_550,g_center,b_000000ff,e_yellow:30--l_text:en:'.$english.',g_south,y_0--l_text:ms25:'.$word.',g_south,y_16--l_ydlg,w_70,h_70';
                       $order[1][0] = '黑白片';
                       $order[1][1] = 'l_ydlg,w_70,h_70--c_fill,e_grayscale';
                       $order[2][0] = '油画效果';
