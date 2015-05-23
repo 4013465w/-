@@ -37,6 +37,7 @@
                       <ul  class="menu">
                             <li><a class="index" href="index.php">首页</a></li>
                             <li><a class="share" href="share/index.php">分享图片</a></li>
+                            <li><a class="falls" href="falls.php">照片墙</a></li>
                             <li><a class="dp" href="big.php">大片模式</a></li>
                             <li><a class="dmyd" href="ytu">烟大新闻</a></li>                                        <li><a class="active" href="contact.php">联系我</a></li>
                         </ul>
