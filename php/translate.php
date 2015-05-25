@@ -3,7 +3,7 @@ function language($value,$from="auto",$to="auto")
 {
   $value_code=urlencode($value);
   #首先对要翻译的文字进行 urlencode 处理
-  $appid="ZpNyLTmZVBx7yIN55vxyH0DN";
+  $appid="您注册的API Key";
   #您注册的API Key
   $languageurl = "http://openapi.baidu.com/public/2.0/bmt/translate?client_id=" . $appid ."&q=" .$value_code. "&from=".$from."&to=".$to;
   #生成翻译API的URL GET地址
