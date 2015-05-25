@@ -123,7 +123,7 @@ $(function(){
 function shijian(){
   var x=10;
   var y=10;
-  $('li a').mouseover(function(e){
+  $('.alertimg').mouseover(function(e){
     var tooltip="<div id='tooltip'><img src='"+this.href+"' alt='预览'\/></div>";
     $('body').append(tooltip);
     $('#tooltip').css({
