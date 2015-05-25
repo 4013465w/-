@@ -109,9 +109,9 @@ zhaiyan();
                       require_once 'share/class/SCS.php';
                      
                         date_default_timezone_set('UTC');
-                        define('AccessKey', 'vjz26f6uKgB5TrpshO3l');
-                        define('SecretKey', '350e1303ff37389b3de35a186aaba3163f16b618');
-                        define('BucketName', 'bai-du');
+                        define('AccessKey', 'AccessKey');
+                        define('AccessKey', 'AccessKey');
+                        define('BucketName', 'BucketName');
                         SCS::setAuth(AccessKey, SecretKey);
                         if(@$_FILES['file']['name']){
                             $name_ary = explode('.',$_FILES['file']['name']);
