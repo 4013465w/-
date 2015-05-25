@@ -91,12 +91,13 @@ $(function(){
       if(data[0])
         for(var i=0;i<18;i+=2){
             var html = "";
-            html = '<li><img src = http://cdn.sinacloud.net/bai-du/'
-          +data[i]+'><p>'
+           html = '<li><a class="alertimg" target="_blank" href="http://imgs.fddcn.cn/'+data[i]+'"><img src = http://imgs.fddcn.cn/'
+          +data[i]+'></a><p>'
           +data[i+1]+'</p></li>';
-      $minUl = getMinUl();
-      $minUl.append(html);
+          $minUl = getMinUl();
+          $minUl.append(html);
           }
+             shijian();
     }
   ) 
   }
@@ -119,6 +120,27 @@ $(function(){
     return $minUl;
   }
 })
+function shijian(){
+  var x=10;
+  var y=10;
+  $('li a').mouseover(function(e){
+    var tooltip="<div id='tooltip'><img src='"+this.href+"' alt='预览'\/></div>";
+    $('body').append(tooltip);
+    $('#tooltip').css({
+      "position": "absolute",
+      "top":(e.pageY+y)+"px",
+      "left":(e.pageX+x)+"px",
+      "width":500+"px"
+    }).show("fast");
+  }).mouseout(function(){
+    $('#tooltip').remove();
+  }).mouseover(function(e){
+    $('#tooltip').css({
+      "top":(e.pageY+y)+"px",
+      "left":(e.pageX+x)+"px"
+    });
+  });
+}
 </script>
 </body>
 </html>
