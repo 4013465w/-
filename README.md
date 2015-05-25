@@ -22,4 +22,4 @@
 2. 修改ytu/wp-config.php(也是连接数据库哒！)。
 3. 修改php/mail.php里面的接收邮件和发送邮件的地址和密码，用于联系我页面。
 4. 使用了百度翻译，需要到[http://developer.baidu.com/](http://developer.baidu.com/)申请一个appkey。
-5. 
+5. 使用了新浪运储存，需要到[http://open.sinastorage.com/](http://open.sinastorage.com/)申请AccessKey和SecretKey并创建一个Bucket。并修改big.php和share/upload/upload.php中相关内容。
