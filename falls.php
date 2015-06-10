@@ -80,8 +80,12 @@ a,img{border:0;}
 $(function(){
   //url data function dataType
   var  page=0;
+  var ss=0;
   function loadMeinv(){
-    
+  	if (ss) {
+  		return 0;
+  	};
+    ss = 1;
     var data = 0;
     //alert(page);
     $.getJSON(
@@ -98,6 +102,7 @@ $(function(){
           $minUl.append(html);
           }
              shijian();
+             ss=0;
     }
   ) 
   }
